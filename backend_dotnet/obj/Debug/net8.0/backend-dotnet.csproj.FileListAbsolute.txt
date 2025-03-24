@@ -1,0 +1,7 @@
+C:\Users\KIIT\Desktop\EventZen1\backend-dotnet\obj\Debug\net8.0\backend-dotnet.csproj.AssemblyReference.cache
+C:\Users\KIIT\Desktop\EventZen1\backend-dotnet\obj\Debug\net8.0\backend-dotnet.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\KIIT\Desktop\EventZen1\backend-dotnet\obj\Debug\net8.0\backend-dotnet.AssemblyInfoInputs.cache
+C:\Users\KIIT\Desktop\EventZen1\backend-dotnet\obj\Debug\net8.0\backend-dotnet.AssemblyInfo.cs
+C:\Users\KIIT\Desktop\EventZen1\backend-dotnet\obj\Debug\net8.0\backend-dotnet.csproj.CoreCompileInputs.cache
+C:\Users\KIIT\Desktop\EventZen1\backend-dotnet\obj\Debug\net8.0\backend-dotnet.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\KIIT\Desktop\EventZen1\backend-dotnet\obj\Debug\net8.0\backend-dotnet.MvcApplicationPartsAssemblyInfo.cache
