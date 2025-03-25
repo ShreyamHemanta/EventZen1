@@ -140,3 +140,4 @@ C:\Users\KIIT\Desktop\EventZen1\backend_dotnet\obj\Debug\net8.0\refint\backend_d
 C:\Users\KIIT\Desktop\EventZen1\backend_dotnet\obj\Debug\net8.0\backend_dotnet.pdb
 C:\Users\KIIT\Desktop\EventZen1\backend_dotnet\obj\Debug\net8.0\backend_dotnet.genruntimeconfig.cache
 C:\Users\KIIT\Desktop\EventZen1\backend_dotnet\obj\Debug\net8.0\ref\backend_dotnet.dll
+C:\Users\KIIT\Desktop\EventZen1\backend_dotnet\obj\Debug\net8.0\backend_dotnet.sourcelink.json
