@@ -1,6 +1,6 @@
 const Event = require('../models/Event');
 
-// @desc    Create an event
+//Create an event
 exports.createEvent = async (req, res) => {
     try {
         const event = await Event.create(req.body);
@@ -10,7 +10,7 @@ exports.createEvent = async (req, res) => {
     }
 };
 
-// @desc    Get all events
+//Get all events
 exports.getEvents = async (req, res) => {
     try {
         const events = await Event.find();
@@ -20,7 +20,7 @@ exports.getEvents = async (req, res) => {
     }
 };
 
-// @desc    Get event by ID
+//Get event by ID
 exports.getEventById = async (req, res) => {
     try {
         const event = await Event.findById(req.params.id);
@@ -31,7 +31,7 @@ exports.getEventById = async (req, res) => {
     }
 };
 
-// @desc    Update an event
+//Update an event
 exports.updateEvent = async (req, res) => {
     try {
         const event = await Event.findByIdAndUpdate(req.params.id, req.body, { new: true });
@@ -42,7 +42,7 @@ exports.updateEvent = async (req, res) => {
     }
 };
 
-// @desc    Delete an event
+//Delete an event
 exports.deleteEvent = async (req, res) => {
     try {
         const event = await Event.findByIdAndDelete(req.params.id);
