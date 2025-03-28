@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import "../styles/Register.css"
 
 const Register = () => {
     const [email, setEmail] = useState('');
@@ -29,27 +30,26 @@ const Register = () => {
     };
 
     return (
-        <div className="container mx-auto max-w-md py-10">
-            <h2 className="text-3xl font-bold mb-6 text-center">Register</h2>
-            <form onSubmit={handleSubmit} className="space-y-4">
+        <div className="register-container">
+            <h1 className="register-title">Register</h1>
+            <form onSubmit={handleSubmit} className="register-form">
                 <input
                     type="email"
                     placeholder="Email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="w-full p-2 border rounded"
+                    className="register-input"
                 />
                 <input
                     type="password"
                     placeholder="Password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full p-2 border rounded"
+                    className="register-input"
                 />
                 <button
                     type="submit"
-                    className="w-full bg-green-500 text-white py-2 rounded hover:bg-green-600"
-                >
+                    className="register-button">
                     Register
                 </button>
             </form>

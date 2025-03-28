@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { getEvents } from '../services/eventService';
+import "../styles/EventList.css"
 
 const EventList = () => {
   const [events, setEvents] = useState([]);

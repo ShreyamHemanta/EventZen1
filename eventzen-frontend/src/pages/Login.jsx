@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { login } from '../services/authService';
 import { setToken } from '../utils/token';
+import "../styles/Login.css"
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -18,21 +19,28 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="email"
-        placeholder="Email"
-        value={email}
-        onChange={(e) => setEmail(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      <button type="submit">Login</button>
-    </form>
+    <div className='login-container'>
+    <h1 className='login-title'>Login</h1>
+      <form onSubmit={handleSubmit} className='login-form'>
+        <div>
+          <input
+            type="email"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+            className='login-input'
+          />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            className='login-input'
+          />
+        </div>
+        <button type="submit" className='login-button'>Login</button>
+      </form>
+    </div>
   );
 };
 
