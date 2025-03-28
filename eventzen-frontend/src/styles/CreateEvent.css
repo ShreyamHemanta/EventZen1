@@ -1,11 +1,14 @@
+body {
+  background-image: url('../../public/home-background.png');
+}
 
 .create-event-container {
     max-width: 500px;
     margin: 50px auto;
     padding: 2rem;
-    border: 1px solid #ddd;
+    border: 1px solid #a8d5ba;
     border-radius: 8px;
-    background-color: #fafafa;
+    background-color: #eaf7e9;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   }
   
@@ -23,12 +26,14 @@
   .create-event-input {
     padding: 0.8rem;
     margin-bottom: 1rem;
-    border: 1px solid #ccc;
+    border: 1px solid #a8d5ba;
     border-radius: 4px;
+    background-color: #f0f9f0;
+    color: #4a7c59;
   }
   
   .create-event-button {
-    background-color: #4CAF50;
+    background-color: #4a7c59;
     color: white;
     padding: 0.8rem;
     border: none;
@@ -37,6 +42,6 @@
   }
   
   .create-event-button:hover {
-    background-color: #45a049;
+    background-color: #3d684a;
   }
   
