@@ -1,22 +1,57 @@
-import { useNavigate } from 'react-router-dom';
-import "../styles/Dashboard.css"
+import React, { useState, useEffect } from 'react';
+import '../styles/Dashboard.css';
 
 const Dashboard = () => {
-    const navigate = useNavigate();
+  const [events, setEvents] = useState([]);
+  const [user, setUser] = useState({});
 
-    const handleLogout = () => {
-        localStorage.removeItem('token');
-        navigate('/login');
+  useEffect(() => {
+    // Fetch events and user info (replace with actual API endpoint)
+    const fetchData = async () => {
+      try {
+        const userResponse = await fetch('http://localhost:5000/api/users/profile', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          },
+        });
+        const userData = await userResponse.json();
+
+        const eventsResponse = await fetch('http://localhost:5000/api/events', {
+          method: 'GET',
+          headers: {
+            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+          },
+        });
+        const eventsData = await eventsResponse.json();
+
+        if (userResponse.ok) setUser(userData);
+        if (eventsResponse.ok) setEvents(eventsData);
+      } catch (error) {
+        console.error('Error fetching data:', error);
+      }
     };
 
-    return (
-        <div className="container mx-auto text-center py-10">
-            <h2 className="text-3xl font-bold">Dashboard</h2>
-            <button onClick={handleLogout} className="bg-red-500 text-white px-4 py-2 mt-4 rounded">
-                Logout
-            </button>
-        </div>
-    );
+    fetchData();
+  }, []);
+
+  return (
+    <div className="dashboard-container">
+      <h2 className="dashboard-title">Welcome, {user.name}</h2>
+      <div className="dashboard-card">
+        <h3 className="dashboard-card-title">Upcoming Events</h3>
+        {events.length === 0 ? (
+          <p>No upcoming events</p>
+        ) : (
+          events.map(event => (
+            <div key={event._id} className="dashboard-card-content">
+              <p><strong>{event.title}</strong> - {new Date(event.date).toLocaleDateString()}</p>
+            </div>
+          ))
+        )}
+      </div>
+    </div>
+  );
 };
 
 export default Dashboard;

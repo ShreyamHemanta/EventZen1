@@ -1,4 +1,4 @@
-/* CreateEvent.css */
+
 .create-event-container {
     max-width: 500px;
     margin: 50px auto;
@@ -20,8 +20,7 @@
     flex-direction: column;
   }
   
-  .create-event-input,
-  .create-event-textarea {
+  .create-event-input {
     padding: 0.8rem;
     margin-bottom: 1rem;
     border: 1px solid #ccc;
