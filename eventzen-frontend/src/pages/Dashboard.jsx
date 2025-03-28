@@ -9,7 +9,7 @@ const Dashboard = () => {
     // Fetch events and user info (replace with actual API endpoint)
     const fetchData = async () => {
       try {
-        const userResponse = await fetch('http://localhost:5000/api/users/profile', {
+        const userResponse = await fetch('http://localhost:5008/api/user/profile', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,

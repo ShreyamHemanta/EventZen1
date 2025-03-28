@@ -1,21 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import '../styles/Profile.css';
+import React, { useState, useEffect } from "react";
+import "../styles/Profile.css";
 
 const Profile = () => {
   const [user, setUser] = useState({
-    name: '',
-    email: '',
-    phone: '',
+    name: "",
+    email: "",
+    phone: "",
   });
 
   useEffect(() => {
     // Fetch user data from backend (replace with actual API endpoint)
     const fetchUser = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/users/profile', {
-          method: 'GET',
+        const response = await fetch("http://localhost:5008/api/user/profile", {
+          method: "GET",
           headers: {
-            'Authorization': `Bearer ${localStorage.getItem('token')}`,
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
         });
         const data = await response.json();
@@ -25,7 +25,7 @@ const Profile = () => {
           console.error(data.message);
         }
       } catch (error) {
-        console.error('Error fetching user profile:', error);
+        console.error("Error fetching user profile:", error);
       }
     };
 
