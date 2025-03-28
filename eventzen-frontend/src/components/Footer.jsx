@@ -1,9 +1,13 @@
 import React from 'react';
+import '../styles/Footer.css';
 
 const Footer = () => {
   return (
-    <footer>
-      <p>&copy; {new Date().getFullYear()} EventZen. All Rights Reserved.</p>
+    <footer className="footer">
+      <div className="footer-container">
+        <p>&copy; {new Date().getFullYear()} Event Zen. All rights reserved.</p>
+        <p>Contact: support@eventzen.com</p>
+      </div>
     </footer>
   );
 };

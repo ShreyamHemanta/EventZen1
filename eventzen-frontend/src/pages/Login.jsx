@@ -20,9 +20,8 @@ const Login = () => {
 
   return (
     <div className='login-container'>
-    <h1 className='login-title'>Login</h1>
-      <form onSubmit={handleSubmit} className='login-form'>
-        <div>
+      <h1 className='login-title'>Login</h1>
+        <form onSubmit={handleSubmit} className='login-form'>
           <input
             type="email"
             placeholder="Email"
@@ -37,7 +36,6 @@ const Login = () => {
             onChange={(e) => setPassword(e.target.value)}
             className='login-input'
           />
-        </div>
         <button type="submit" className='login-button'>Login</button>
       </form>
     </div>
