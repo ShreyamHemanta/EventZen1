@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -16,19 +16,18 @@ const App = () => {
         <AuthProvider>
             <Header />
             <Routes>
-                
+                {/* Public Routes */}
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
 
-                
-                
+                {/* Protected Routes */}
+                <Route element={<PrivateRoute />}>
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/events" element={<EventList />} />
                     <Route path="/create-event" element={<CreateEvent />} />
-                
-                
+                </Route>
             </Routes>
             <Footer />
         </AuthProvider>

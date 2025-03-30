@@ -33,7 +33,7 @@ namespace backend_dotnet.Services
                 expires: DateTime.Now.AddDays(1),
                 signingCredentials: creds
             );
-
+            
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
     }

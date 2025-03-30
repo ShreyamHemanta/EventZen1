@@ -3,21 +3,38 @@ import "../styles/Profile.css";
 
 const Profile = () => {
   const [user, setUser] = useState({
-    name: "",
+    username: "",
     email: "",
-    phone: "",
   });
 
   useEffect(() => {
-    // Fetch user data from backend (replace with actual API endpoint)
     const fetchUser = async () => {
       try {
-        const response = await fetch("http://localhost:5008/api/user/profile", {
+        const token = localStorage.getItem("token");
+        if (!token) {
+          console.error("No token found");
+          return;
+        }
+
+        // Decode JWT and get nameid as username
+        const decodedToken = JSON.parse(atob(token.split(".")[1]));
+        console.log("Decoded Token:", decodedToken);
+
+        const username = decodedToken.nameid; // Use nameid instead of username
+
+        if (!username) {
+          console.error("Username (nameid) not found in token");
+          return;
+        }
+
+        // Fetch user profile using username
+        const response = await fetch(`http://localhost:5008/api/user/profile/${username}`, {
           method: "GET",
           headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
+            Authorization: `Bearer ${token}`,
           },
         });
+
         const data = await response.json();
         if (response.ok) {
           setUser(data);
@@ -37,9 +54,6 @@ const Profile = () => {
       <h2 className="profile-title">My Profile</h2>
       <div className="profile-info">
         <strong>Username: </strong> {user.username}
-      </div>
-      <div className="profile-info">
-        <strong>Name: </strong> {user.name}
       </div>
       <div className="profile-info">
         <strong>Email: </strong> {user.email}
