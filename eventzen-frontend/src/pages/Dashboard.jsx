@@ -9,7 +9,7 @@ const Dashboard = () => {
     
     const fetchData = async () => {
       try {
-        const userResponse = await fetch('http://localhost:5008/api/user', {
+        const userResponse = await fetch('http://localhost:5008/api/user/profile', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
