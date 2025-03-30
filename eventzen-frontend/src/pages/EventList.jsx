@@ -131,13 +131,15 @@ const EventList = () => {
                   onChange={handleChange}
                   placeholder="Description"
                 />
-                {/* <p>Event Date</p>
-                <date
+                <p>Event Date</p>
+                <input
+                  type="date"
                   name="date"
                   value={editedEvent.date}
                   onChange={handleChange}
-                  placeholder="Date"
-                /> */}
+                  placeholder="Select Date"
+                  className='edit-date'
+                />
                 <div className="event-action">
                   <button onClick={handleSaveClick} className="event-button">Save</button>
                   <button onClick={handleCancelClick} className="event-button">Cancel</button>
