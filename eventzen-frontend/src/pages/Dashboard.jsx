@@ -9,7 +9,7 @@ const Dashboard = () => {
     
     const fetchData = async () => {
       try {
-        const userResponse = await fetch('http://localhost:5008/api/user/profile', {
+        const userResponse = await fetch('http://localhost:5008/api/user', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -17,7 +17,7 @@ const Dashboard = () => {
         });
         const userData = await userResponse.json();
 
-        const eventsResponse = await fetch('http://localhost:5008/api/events', {
+        const eventsResponse = await fetch('http://localhost:5000/api/events', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -37,7 +37,7 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-  <h2 className="dashboard-title">Welcome, {user.name}</h2>
+  <h2 className="dashboard-title">Welcome, {user.username}</h2>
   <div className="dashboard-card">
     <h3 className="dashboard-card-title">Upcoming Events</h3>
     {events.length === 0 ? (

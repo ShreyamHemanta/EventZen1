@@ -12,7 +12,7 @@ const Profile = () => {
     // Fetch user data from backend (replace with actual API endpoint)
     const fetchUser = async () => {
       try {
-        const response = await fetch("http://localhost:5008/api/user/profile", {
+        const response = await fetch("http://localhost:5008/api/user", {
           method: "GET",
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -36,13 +36,13 @@ const Profile = () => {
     <div className="profile-container">
       <h2 className="profile-title">My Profile</h2>
       <div className="profile-info">
-        <strong>Name:</strong> {user.name}
+        <strong>Username: </strong> {user.username}
       </div>
       <div className="profile-info">
-        <strong>Email:</strong> {user.email}
+        <strong>Name: </strong> {user.name}
       </div>
       <div className="profile-info">
-        <strong>Phone:</strong> {user.phone}
+        <strong>Email: </strong> {user.email}
       </div>
       <button className="profile-button">Edit Profile</button>
     </div>
