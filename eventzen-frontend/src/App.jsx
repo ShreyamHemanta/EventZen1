@@ -22,12 +22,12 @@ const App = () => {
                 <Route path="/register" element={<Register />} />
 
                 
-                <Route element={<PrivateRoute />}>
+                
                     <Route path="/dashboard" element={<Dashboard />} />
                     <Route path="/profile" element={<Profile />} />
                     <Route path="/events" element={<EventList />} />
                     <Route path="/create-event" element={<CreateEvent />} />
-                </Route>
+                
                 
             </Routes>
             <Footer />

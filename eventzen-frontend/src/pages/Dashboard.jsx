@@ -6,7 +6,7 @@ const Dashboard = () => {
   const [user, setUser] = useState({});
 
   useEffect(() => {
-    // Fetch events and user info (replace with actual API endpoint)
+    
     const fetchData = async () => {
       try {
         const userResponse = await fetch('http://localhost:5008/api/user/profile', {
@@ -17,7 +17,7 @@ const Dashboard = () => {
         });
         const userData = await userResponse.json();
 
-        const eventsResponse = await fetch('http://localhost:5000/api/events', {
+        const eventsResponse = await fetch('http://localhost:5008/api/events', {
           method: 'GET',
           headers: {
             'Authorization': `Bearer ${localStorage.getItem('token')}`,
@@ -37,20 +37,19 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      <h2 className="dashboard-title">Welcome, {user.name}</h2>
-      <div className="dashboard-card">
-        <h3 className="dashboard-card-title">Upcoming Events</h3>
-        {events.length === 0 ? (
-          <p>No upcoming events</p>
-        ) : (
-          events.map(event => (
-            <div key={event._id} className="dashboard-card-content">
-              <p><strong>{event.title}</strong> - {new Date(event.date).toLocaleDateString()}</p>
-            </div>
-          ))
-        )}
-      </div>
+  <h2 className="dashboard-title">Welcome, {user.name}</h2>
+  <div className="dashboard-card">
+    <h3 className="dashboard-card-title">Upcoming Events</h3>
+    {events.length === 0 ? (
+    <p>No upcoming events</p>
+    ) : ( events.map(event => (
+    <div key="{event._id}" className="dashboard-card-content">
+      <p><strong>{event.title}</strong>
+        - {new Date(event.date).toLocaleDateString()}</p>
     </div>
+    )) )}
+  </div>
+</div>
   );
 };
 

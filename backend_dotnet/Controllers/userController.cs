@@ -43,7 +43,10 @@ public async Task<IActionResult> Login([FromBody] LoginDTO dto)
     try
     {
         var user = await _userService.AuthenticateUser(dto.Email, dto.Password);
-        if (user == null) return Unauthorized("Invalid credentials");
+        if (user == null)
+        {
+            return Unauthorized(new { message = "Invalid credentials" }); 
+        }
 
         var token = _tokenService.CreateToken(user);
         return Ok(new { token });
