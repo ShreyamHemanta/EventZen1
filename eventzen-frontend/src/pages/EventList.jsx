@@ -131,6 +131,13 @@ const EventList = () => {
                   onChange={handleChange}
                   placeholder="Description"
                 />
+                {/* <p>Event Date</p>
+                <date
+                  name="date"
+                  value={editedEvent.date}
+                  onChange={handleChange}
+                  placeholder="Date"
+                /> */}
                 <div className="event-action">
                   <button onClick={handleSaveClick} className="event-button">Save</button>
                   <button onClick={handleCancelClick} className="event-button">Cancel</button>
