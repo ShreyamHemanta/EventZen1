@@ -10,13 +10,21 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const data = await login({ email, password });
-      setToken(data.token);
-      window.location.href = '/dashboard';
+        const data = await login({ email, password });
+
+        if (!data || !data.token) {
+            throw new Error("Invalid response from server. No token received.");
+        }
+
+        setToken(data.token);
+        console.log("Token saved, redirecting...");
+
+        window.location.href = "/dashboard";  // Redirect after successful login
     } catch (error) {
-      console.error('Login error:', error);
+        console.error("Login error:", error);
     }
-  };
+};
+
 
   return (
     <div className='login-container'>

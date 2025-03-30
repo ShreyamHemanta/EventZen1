@@ -65,7 +65,7 @@ const Dashboard = () => {
           events.map((event) => (
             <div key={event._id} className="dashboard-card-content">
               <p>
-                <strong>{event.title}</strong> - {new Date(event.date).toLocaleDateString()}
+                <strong>{event.name}</strong> - {new Date(event.date).toLocaleDateString()}
               </p>
             </div>
           ))

@@ -100,13 +100,15 @@ const EventList = () => {
           <div key={event._id} className="event-item">
             {editingEvent === event._id ? (
               <div>
+                <p>Event Name</p>
                 <input
                   type="text"
-                  name="title"
-                  value={editedEvent.title}
+                  name="name"
+                  value={editedEvent.name}
                   onChange={handleChange}
-                  placeholder="Event Title"
+                  placeholder="Event Name"
                 />
+                <p>Event Location</p>
                 <input
                   type="text"
                   name="location"
@@ -114,6 +116,7 @@ const EventList = () => {
                   onChange={handleChange}
                   placeholder="Location"
                 />
+                <p>Event Organizer</p>
                 <input
                   type="text"
                   name="organizer"
@@ -121,6 +124,7 @@ const EventList = () => {
                   onChange={handleChange}
                   placeholder="Organizer"
                 />
+                <p>Event Description</p>
                 <textarea
                   name="description"
                   value={editedEvent.description}
@@ -135,10 +139,11 @@ const EventList = () => {
             ) : (
               <div>
                 <h3 className="event-title">{event.title}</h3>
-                <p className="event-date">{new Date(event.date).toLocaleDateString()}</p>
+                <p className="event-date"><strong>Date:</strong>{new Date(event.date).toLocaleDateString()}</p>
+                <p><strong>Name:</strong> {event.name}</p>
                 <p><strong>Location:</strong> {event.location}</p>
                 <p><strong>Organizer:</strong> {event.organizer}</p>
-                <p>{event.description}</p>
+                <p><strong>Description:</strong>{event.description}</p>
                 <div className="event-action">
                   <button className="event-button" onClick={() => handleEditClick(event)}>Edit</button>
                   <button className="event-button" onClick={() => handleDelete(event._id)}>Delete</button>

@@ -16,18 +16,14 @@ const App = () => {
         <AuthProvider>
             <Header />
             <Routes>
-                {/* Public Routes */}
                 <Route path="/" element={<Home />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/dashboard" element={<Dashboard />} />
+                <Route path="/profile" element={<Profile />} />
+                <Route path="/events" element={<EventList />} />
+                <Route path="/create-event" element={<CreateEvent />} />
 
-                {/* Protected Routes */}
-                <Route element={<PrivateRoute />}>
-                    <Route path="/dashboard" element={<Dashboard />} />
-                    <Route path="/profile" element={<Profile />} />
-                    <Route path="/events" element={<EventList />} />
-                    <Route path="/create-event" element={<CreateEvent />} />
-                </Route>
             </Routes>
             <Footer />
         </AuthProvider>
