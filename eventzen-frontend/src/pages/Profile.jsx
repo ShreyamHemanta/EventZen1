@@ -16,18 +16,18 @@ const Profile = () => {
           return;
         }
 
-        // Decode JWT and get nameid as username
+        
         const decodedToken = JSON.parse(atob(token.split(".")[1]));
         console.log("Decoded Token:", decodedToken);
 
-        const username = decodedToken.nameid; // Use nameid instead of username
+        const username = decodedToken.nameid; 
 
         if (!username) {
           console.error("Username (nameid) not found in token");
           return;
         }
 
-        // Fetch user profile using username
+        
         const response = await fetch(`http://localhost:5008/api/user/profile/${username}`, {
           method: "GET",
           headers: {
@@ -58,7 +58,6 @@ const Profile = () => {
       <div className="profile-info">
         <strong>Email: </strong> {user.email}
       </div>
-      <button className="profile-button">Edit Profile</button>
     </div>
   );
 };
