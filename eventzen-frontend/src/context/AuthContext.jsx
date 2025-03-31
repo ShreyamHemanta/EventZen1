@@ -8,7 +8,7 @@ export const AuthProvider = ({ children }) => {
     useEffect(() => {
         const token = localStorage.getItem('token');
         if (token) {
-            setUser({ token }); // You can decode token if needed
+            setUser({ token });
         }
     }, []);
 

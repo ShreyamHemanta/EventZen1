@@ -7,7 +7,7 @@ const EventList = () => {
   const [editedEvent, setEditedEvent] = useState({});
 
   useEffect(() => {
-    // Fetch all events from backend (replace with actual API endpoint)
+
     const fetchEvents = async () => {
       try {
         const response = await fetch('http://localhost:5000/api/events', {
@@ -48,13 +48,11 @@ const EventList = () => {
     }
   };
 
-  // Handle edit click
   const handleEditClick = (event) => {
     setEditingEvent(event._id);
     setEditedEvent({ ...event });
   };
 
-  // Handle save after editing
   const handleSaveClick = async () => {
     try {
       const response = await fetch(`http://localhost:5000/api/events/${editedEvent._id}`, {
@@ -76,12 +74,10 @@ const EventList = () => {
     }
   };
 
-  // Handle cancel editing
   const handleCancelClick = () => {
     setEditingEvent(null);
   };
 
-  // Handle input change during editing
   const handleChange = (e) => {
     const { name, value } = e.target;
     setEditedEvent((prev) => ({

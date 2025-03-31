@@ -14,18 +14,16 @@ const Dashboard = () => {
           return;
         }
 
-        // Decode JWT and get username from nameid
         const decodedToken = JSON.parse(atob(token.split(".")[1]));
         console.log("Decoded Token:", decodedToken);
 
-        const username = decodedToken.nameid; // Use nameid instead of username
+        const username = decodedToken.nameid; 
 
         if (!username) {
           console.error("Username (nameid) not found in token");
           return;
         }
 
-        // Fetch user profile using username
         const userResponse = await fetch(`http://localhost:5008/api/user/profile/${username}`, {
           method: "GET",
           headers: {
@@ -36,7 +34,6 @@ const Dashboard = () => {
         const userData = await userResponse.json();
         if (userResponse.ok) setUser(userData);
 
-        // Fetch events
         const eventsResponse = await fetch("http://localhost:5000/api/events", {
           method: "GET",
           headers: {

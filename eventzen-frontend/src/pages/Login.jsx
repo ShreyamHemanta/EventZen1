@@ -19,7 +19,7 @@ const Login = () => {
         setToken(data.token);
         console.log("Token saved, redirecting...");
 
-        window.location.href = "/dashboard";  // Redirect after successful login
+        window.location.href = "/dashboard"; 
     } catch (error) {
         console.error("Login error:", error);
     }
